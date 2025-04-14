@@ -1,4 +1,4 @@
-# uuid-logic-cracker
+# uuid-equality-logic-cracker
 
 A compact, field-logical decryption toolkit that tests brute-force cracking of UUID-encrypted AES-256-CBC files using an equality-based initialization principle: `xy = x / y`. This project demonstrates deterministic search behavior within defined entropy spaces.
 
