@@ -25,14 +25,14 @@ To showcase how logic-based initialization (not filtering) can structure brute-f
 
 ### 1. Generate an Encrypted Challenge
 ```bash
-python uuid_demo_generator.py
+python uuid_demo_kit.py
 ```
 - Encrypts a message with a UUID based on a numeric suffix.
 - Saves the encrypted file as `uuid_demo_challenge.enc`
 
 ### 2. Decrypt with Deterministic Brute Force
 ```bash
-python uuid_demo_breaker.py
+python uuid_demobreaker.py
 ```
 - Scans from index 0 to 1 million (adjustable).
 - Initializes field logic with `xy = x / y`, then proceeds unfiltered.
