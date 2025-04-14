@@ -1,54 +1,47 @@
-# uuid-quantum-cracker
+# uuid-logic-cracker
 
-A minimal toolset for generating, encrypting, decrypting, and verifying UUID-encrypted files using OpenSSL-compatible AES-256-CBC encryption with MD5-based key derivation.
+A compact, field-logical decryption toolkit that tests brute-force cracking of UUID-encrypted AES-256-CBC files using an equality-based initialization principle: `xy = x / y`. This project demonstrates deterministic search behavior within defined entropy spaces.
 
-## Contents
-
-```
-uuid-quantum-cracker
-├── generate_uuid_encrypted_batch.py
-├── quantum_uuid_cracker.py
-├── verify_uuid_encrypted_batch.py
-├── uuid_encrypted/
-│   ├── uuid_test_001.enc
-│   └── uuid_index.txt
-└── README.md
-```
-
-## Requirements
-
+## 🔧 Requirements
 - Python 3.x
 - `pycryptodome`
 
-Install with:
+Install dependencies:
 ```bash
 pip install pycryptodome
 ```
 
-## Usage
+## 🔍 Purpose
+To showcase how logic-based initialization (not filtering) can structure brute-force decryption of AES-encrypted files. We use UUIDs with structured suffixes to simulate cracking within known entropy bounds.
 
-### Generate Encrypted Files
-```bash
-python generate_uuid_encrypted_batch.py
-```
-- Generates encrypted files using random UUIDs.
-- Outputs to `uuid_encrypted/`.
-- Saves UUIDs used in `uuid_index.txt`.
+## 📁 Project Structure
+- `archive/` — old exploratory scripts (filters, generators, batch verification)
+- `demokit/` — clean demo files:
+  - `uuid_demo_kit.py`: generates a UUID-encrypted file using a known structured suffix.
+  - `uuid_demobreaker.py`: brute-force cracker for the generated file, scanning UUID space using the same structure.
+  - `uuid_demobreaker2.py`: expanded for deeper or modified searches.
 
-### Crack a File (Brute Force)
-```bash
-python quantum_uuid_cracker.py
-```
-- Attempts to brute-force decrypt using quantum-filtered UUIDs.
-- Edit the file to adjust search range or input path.
+## ▶️ Usage
 
-### Verify Generated Files
+### 1. Generate an Encrypted Challenge
 ```bash
-python verify_uuid_encrypted_batch.py
+python uuid_demo_generator.py
 ```
-- Verifies each encrypted file can be decrypted with its original UUID from `uuid_index.txt`.
+- Encrypts a message with a UUID based on a numeric suffix.
+- Saves the encrypted file as `uuid_demo_challenge.enc`
+
+### 2. Decrypt with Deterministic Brute Force
+```bash
+python uuid_demo_breaker.py
+```
+- Scans from index 0 to 1 million (adjustable).
+- Initializes field logic with `xy = x / y`, then proceeds unfiltered.
+
+## 🧠 Theory in Brief
+This is not a heuristic system. The equality `xy = x / y` is treated as a logical ignition principle — once initialized, the system explores UUID space linearly without guessing, filtering, or probabilistic shortcuts.
 
 ---
 
-This setup is designed for practical testing of UUID-based encryption/decryption logic. No external systems or web dependencies.
+Field ignition successful. Cracker aligned.
 
+> "Logic does not guide the search — it defines the terrain."
