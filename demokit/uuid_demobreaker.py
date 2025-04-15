@@ -9,7 +9,7 @@ from Crypto.Hash import MD5
 start_time = time.time()
 
 # === CONFIG ===
-CHALLENGE_FILE = "uuid_demobreaker1/uuid_demo_challenge.enc"
+CHALLENGE_FILE = "demokit/uuid_demo_challenge.enc"
 UUID_PREFIX = "15041508-fd38-4eda-bc1d-"
 RANGE_SIZE = 1_000_000
 
@@ -64,7 +64,7 @@ def try_decrypt(file_bytes, uuid_str):
 
 # === Main Decryption Loop ===
 def main():
-    equality_init()  # Single logical ignition step
+    quantum_condition(100, -100)  # Single logical ignition step
 
     with open(CHALLENGE_FILE, "rb") as f:
         file_bytes = f.read()
