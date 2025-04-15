@@ -11,7 +11,7 @@ start_time = time.time()
 # === CONFIG ===
 CHALLENGE_FILE = "demokit/uuid_demo_challenge.enc"
 UUID_PREFIX = "15041508-fd38-4eda-bc1d-"
-RANGE_SIZE = 1_000_000
+RANGE_SIZE = 1_000_000_000
 
 # === EVP Key Derivation ===
 def evp_bytes_to_key(password: bytes, salt: bytes, key_len=32, iv_len=16):
