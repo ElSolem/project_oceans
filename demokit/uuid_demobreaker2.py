@@ -6,9 +6,9 @@ from Crypto.Hash import MD5
 
 start_time = time.time()
 # === CONFIG ===
-CHALLENGE_FILE = "uuid_demobreaker1/uuid_demo_challenge.enc"
+CHALLENGE_FILE = "demokit/uuid_demo_challenge.enc"
 UUID_PREFIX = "15041508-fd38-4eda-bc1d-"
-RANGE_SIZE = 1_000_000_000  # Expanded search space for 48-bit entropy test
+RANGE_SIZE = 1_000_000  # Expanded search space for 48-bit entropy test
 
 # === EVP Key Derivation ===
 def evp_bytes_to_key(password: bytes, salt: bytes, key_len=32, iv_len=16):
@@ -29,10 +29,13 @@ def strip_pkcs7(data):
     return data
 
 # === Initialization Using xy = x / y ===
-def equality_init():
-    print("[*] Initialization complete using equality: xy = x / y")
-    return True
-
+# Quantum equality condition: xy == x/y (in field-space logic)
+def quantum_condition(x, y):
+    try:
+        return (x * y) == (x / y)  # Threshold defines equality field
+    except ZeroDivisionError:
+        return False
+    
 # === UUID Generator with 48-bit Entropy ===
 def generate_partial_uuid(index):
     suffix = f"{index:012x}"  # 48 bits as 12 hex digits
@@ -58,7 +61,7 @@ def try_decrypt(file_bytes, uuid_str):
 
 # === Main Decryption Loop ===
 def main():
-    equality_init()  # Single logical ignition step
+    quantum_condition(100, -100)  # Single logical ignition step
 
     with open(CHALLENGE_FILE, "rb") as f:
         file_bytes = f.read()
