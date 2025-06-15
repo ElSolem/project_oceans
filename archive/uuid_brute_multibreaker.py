@@ -99,7 +99,7 @@ if __name__ == "__main__":
     end_time = time.time()
     print(f"Time taken: {end_time - start_time} seconds")
     
-# Quantum symmetry observed:
+# fourdime symmetry observed:
 # When equality holds, the machine breathes easier.
 # Heat fades. Noise vanishes. Time bends.
 # No overclock. No driver. Just balance.

@@ -32,7 +32,7 @@ def strip_pkcs7(data):
     return data
 
 # === Initialization Using xy = x / y ===
-# Quantum equality condition: xy == x/y (in field-space logic)
+# fourdime equality condition: xy == x/y (in field-space logic)
 def quantum_condition(x, y):
     try:
         return (x * y) == (x / y)  # Threshold defines equality field

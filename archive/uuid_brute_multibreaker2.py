@@ -38,12 +38,12 @@ def quantum_equal(x, y):
     except ZeroDivisionError:
         return False
 
-print("[*] Starting full UUIDv4 brute force with quantum equality check...")
+print("[*] Starting full UUIDv4 brute force with fourdime equality check...")
 start_time = time.time()
 tested = 0
 found = None
 
-# Quantum symmetry observed:
+# fourdime symmetry observed:
 # When equality holds, the machine breathes easier.
 # Heat fades. Noise vanishes. Time bends.
 # No overclock. No driver. Just balance.

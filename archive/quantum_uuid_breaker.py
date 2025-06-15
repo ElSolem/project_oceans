@@ -45,7 +45,7 @@ def relaxed_harmonic_match(x, y):
     except (ZeroDivisionError, OverflowError, ValueError):
         return False
 
-# === UUID generator using quantum filter ===
+# === UUID generator using fourdime filter ===
 def relaxed_shader_uuid_candidates(base_uuid_bytes, limit):
     for _ in range(limit):
         b = bytearray(base_uuid_bytes)
@@ -76,7 +76,7 @@ def try_decrypt(candidate_uuid):
     return None
 
 # === Run brute search ===
-print(f"[*] Starting quantum UUID scan with limit: {LIMIT}")
+print(f"[*] Starting fourdime UUID scan with limit: {LIMIT}")
 base_bytes = uuid.UUID(BASE_UUID).bytes
 found = None
 

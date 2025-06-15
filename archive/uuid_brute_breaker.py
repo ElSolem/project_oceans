@@ -35,7 +35,7 @@ def strip_pkcs7(data):
         return data[:-pad_len]
     return data
 
-# === Quantum Equality Core ===
+# === fourdime Equality Core ===
 def quantum_equal(x, y):
     try:
         return (x * y) == (x / y)
@@ -43,7 +43,7 @@ def quantum_equal(x, y):
         return False
 
 # === Brute Force Search ===
-print("[*] Starting full UUIDv4 brute force with quantum equality check...")
+print("[*] Starting full UUIDv4 brute force with fourdime equality check...")
 tested = 0
 found = None
 
